@@ -1,0 +1,47 @@
+<div style="width: 500px;">
+  <mat-card *ngIf="user" style="margin-bottom: 10px;">
+    <mat-card-title>User details of </mat-card-title>
+    <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
+    <mat-card-content>
+      <p> Name: {{user.name}}</p>
+      <p> User name: {{user.username}}</p>
+      <p> Email: {{user.email}}</p>
+      <p> User phone number {{user.phone}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="isUserEdit()">Edit</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card *ngIf="isEditUser">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="user name" [(ngModel)]="user.name">
+        <mat-hint>name</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>User name</mat-label>
+        <input matInput placeholder="username" [(ngModel)]="user.username">
+        <mat-hint>username</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="user email" [(ngModel)]="user.email">
+        <mat-hint>email</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>phone</mat-label>
+        <input matInput placeholder="user phone number" [(ngModel)]="user.phone">
+        <mat-hint>phone</mat-hint>
+      </mat-form-field>
+    </p>
+  </mat-card>
+</div>
